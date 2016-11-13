@@ -8,22 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60461DD8F89500F79418 /* AppDelegate.swift */; };
-		FAAA60491DD8F89500F79418 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60481DD8F89500F79418 /* ViewController.swift */; };
 		FAAA604C1DD8F89500F79418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA604A1DD8F89500F79418 /* Main.storyboard */; };
-		FAAA604F1DD8F89500F79418 /* SanAcademics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAAA604D1DD8F89500F79418 /* SanAcademics.xcdatamodeld */; };
 		FAAA60511DD8F89500F79418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60501DD8F89500F79418 /* Assets.xcassets */; };
 		FAAA60541DD8F89500F79418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60521DD8F89500F79418 /* LaunchScreen.storyboard */; };
+		FAAA60601DD8F90300F79418 /* SanAcademics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605B1DD8F90300F79418 /* SanAcademics.xcdatamodeld */; };
+		FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605D1DD8F90300F79418 /* SemestersTableViewController.swift */; };
+		FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605E1DD8F90300F79418 /* SemesterTableViewCell.swift */; };
+		FAAA60631DD8F90300F79418 /* SemesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605F1DD8F90300F79418 /* SemesterViewController.swift */; };
+		FAAA606D1DD8F94200F79418 /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA606A1DD8F93900F79418 /* MathParser.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAAA60691DD8F93900F79418 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 559B3EF91B74063600000108;
+			remoteInfo = MathParser;
+		};
+		FAAA606B1DD8F93900F79418 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 559B3F021B74063600000108;
+			remoteInfo = MathParserTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAAA60431DD8F89500F79418 /* SanAcademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanAcademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA60461DD8F89500F79418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAAA60481DD8F89500F79418 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAAA604B1DD8F89500F79418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FAAA604E1DD8F89500F79418 /* SanAcademics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SanAcademics.xcdatamodel; sourceTree = "<group>"; };
 		FAAA60501DD8F89500F79418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAA60531DD8F89500F79418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAA60551DD8F89500F79418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAA605C1DD8F90300F79418 /* SanAcademics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SanAcademics.xcdatamodel; sourceTree = "<group>"; };
+		FAAA605D1DD8F90300F79418 /* SemestersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemestersTableViewController.swift; sourceTree = "<group>"; };
+		FAAA605E1DD8F90300F79418 /* SemesterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTableViewCell.swift; sourceTree = "<group>"; };
+		FAAA605F1DD8F90300F79418 /* SemesterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterViewController.swift; sourceTree = "<group>"; };
+		FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDMathParser.xcodeproj; path = DDMathParser/DDMathParser.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA606D1DD8F94200F79418 /* MathParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +64,7 @@
 		FAAA603A1DD8F89500F79418 = {
 			isa = PBXGroup;
 			children = (
+				FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */,
 				FAAA60451DD8F89500F79418 /* SanAcademics */,
 				FAAA60441DD8F89500F79418 /* Products */,
 			);
@@ -56,15 +81,42 @@
 		FAAA60451DD8F89500F79418 /* SanAcademics */ = {
 			isa = PBXGroup;
 			children = (
+				FAAA606E1DD8F95800F79418 /* Controllers */,
+				FAAA606F1DD8F95D00F79418 /* Storyboards */,
 				FAAA60461DD8F89500F79418 /* AppDelegate.swift */,
-				FAAA60481DD8F89500F79418 /* ViewController.swift */,
-				FAAA604A1DD8F89500F79418 /* Main.storyboard */,
 				FAAA60501DD8F89500F79418 /* Assets.xcassets */,
-				FAAA60521DD8F89500F79418 /* LaunchScreen.storyboard */,
 				FAAA60551DD8F89500F79418 /* Info.plist */,
-				FAAA604D1DD8F89500F79418 /* SanAcademics.xcdatamodeld */,
+				FAAA605B1DD8F90300F79418 /* SanAcademics.xcdatamodeld */,
 			);
 			path = SanAcademics;
+			sourceTree = "<group>";
+		};
+		FAAA60651DD8F93800F79418 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA606A1DD8F93900F79418 /* MathParser.framework */,
+				FAAA606C1DD8F93900F79418 /* MathParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAAA606E1DD8F95800F79418 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA605D1DD8F90300F79418 /* SemestersTableViewController.swift */,
+				FAAA605E1DD8F90300F79418 /* SemesterTableViewCell.swift */,
+				FAAA605F1DD8F90300F79418 /* SemesterViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FAAA606F1DD8F95D00F79418 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA604A1DD8F89500F79418 /* Main.storyboard */,
+				FAAA60521DD8F89500F79418 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,12 +166,35 @@
 			mainGroup = FAAA603A1DD8F89500F79418;
 			productRefGroup = FAAA60441DD8F89500F79418 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAAA60651DD8F93800F79418 /* Products */;
+					ProjectRef = FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FAAA60421DD8F89500F79418 /* SanAcademics */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FAAA606A1DD8F93900F79418 /* MathParser.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MathParser.framework;
+			remoteRef = FAAA60691DD8F93900F79418 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAAA606C1DD8F93900F79418 /* MathParserTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MathParserTests.xctest;
+			remoteRef = FAAA606B1DD8F93900F79418 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FAAA60411DD8F89500F79418 /* Resources */ = {
@@ -139,9 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAA604F1DD8F89500F79418 /* SanAcademics.xcdatamodeld in Sources */,
-				FAAA60491DD8F89500F79418 /* ViewController.swift in Sources */,
+				FAAA60601DD8F90300F79418 /* SanAcademics.xcdatamodeld in Sources */,
+				FAAA60631DD8F90300F79418 /* SemesterViewController.swift in Sources */,
 				FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */,
+				FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */,
+				FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,16 +380,17 @@
 				FAAA605A1DD8F89500F79418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FAAA604D1DD8F89500F79418 /* SanAcademics.xcdatamodeld */ = {
+		FAAA605B1DD8F90300F79418 /* SanAcademics.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FAAA604E1DD8F89500F79418 /* SanAcademics.xcdatamodel */,
+				FAAA605C1DD8F90300F79418 /* SanAcademics.xcdatamodel */,
 			);
-			currentVersion = FAAA604E1DD8F89500F79418 /* SanAcademics.xcdatamodel */;
+			currentVersion = FAAA605C1DD8F90300F79418 /* SanAcademics.xcdatamodel */;
 			path = SanAcademics.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
