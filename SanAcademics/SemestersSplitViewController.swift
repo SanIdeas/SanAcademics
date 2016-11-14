@@ -1,5 +1,5 @@
 //
-//  SemesterViewController.swift
+//  SemestersSplitViewController.swift
 //  SanAcademics
 //
 //  Created by Alex Balladares Rojas on 13-11-16.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class SemesterViewController: UIViewController {
-    var semester: Semester?
+class SemestersSplitViewController: UISplitViewController, UISplitViewControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +22,11 @@ class SemesterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Show MasterView first on App init
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+        return true
+    }
+
     /*
     // MARK: - Navigation
 

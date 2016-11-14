@@ -1,5 +1,5 @@
 //
-//  SemestersTableViewController.swift
+//  StudyPlansTableViewController.swift
 //  SanAcademics
 //
 //  Created by Alex Balladares Rojas on 13-11-16.
@@ -9,23 +9,19 @@
 import UIKit
 import CoreData
 
-class SemestersTableViewController: UITableViewController {
-    var studyPlan: StudyPlan?
-    var semesters = [Semester]()
-    
-    //var semesterss: [String] = ["2016-1", "2015-2", "2015-1"]
-    //var subtitles: [String] = ["PA: 3600", "PA: 5210", "PA: 4623"]
+class StudyPlansTableViewController: UITableViewController {
+    var studyPlans = [StudyPlan]()
+    var student: Student?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getSemesters()
+        getStudyPlans()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,74 +38,57 @@ class SemestersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.semesters.count
+        return studyPlans.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SemesterCell", for: indexPath) as! SemesterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudyPlanCell", for: indexPath) as! StudyPlanTableViewCell
 
         // Configure the cell...
-        let semester = semesters[indexPath.row]
-        cell.semester.text = "\(semester.number) - \(semester.year)"
-        cell.subtitle.text = "PA: \(studyPlan!.academicPriority!)"
+        let studyPlan = studyPlans[indexPath.row]
+        
+        cell.name.text = studyPlan.name
+        cell.academicPriority.text = "PA: \(studyPlan.academicPriority!)"
+
         return cell
     }
     
-    func getSemesters(){
+    func getStudyPlans(){
         let context = getContext()
-        let predicate = NSPredicate(format: "studyPlan == %@", studyPlan!)
-        let fetchRequest: NSFetchRequest<Semester> = Semester.fetchRequest()
-        fetchRequest.predicate = predicate
+        let fetchRequest: NSFetchRequest<StudyPlan> = StudyPlan.fetchRequest()
         
         do{
-            semesters = try context.fetch(fetchRequest)
+            studyPlans = try context.fetch(fetchRequest)
         }
         catch{
             print("Request error: \(error)")
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let button = sender as! UIButton
-        let contentView = button.superview!
-        let cell = contentView.superview! as! SemesterTableViewCell
-        let index = self.tableView.indexPath(for: cell)!.row
-        
-        let semesterViewController = segue.destination as! SemesterViewController
-        semesterViewController.semester = semesters[index]
-    }
-
-    @IBAction func onClickAddSemesterButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Nuevo semestre", message: "Agregar semestre", preferredStyle: .alert)
+    @IBAction func onClickAddStudyPlanButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Nuevo Plan de Estudio", message: "Agregar Plan de Estudio", preferredStyle: .alert)
         alert.isModalInPopover = true
         
         alert.addTextField{(textField) in
-            textField.placeholder = "Año"
+            textField.placeholder = "Nombre"
         }
         
-        alert.addTextField{(textField) in
-            textField.placeholder = "Número"
-        }
-
         // Cancel Button
         alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: {(_) in
         }))
         
         // Confirm Button
         alert.addAction(UIAlertAction(title: "Crear", style: .default, handler: {(_) in
-            let numberField = alert.textFields![0]
-            let yearField = alert.textFields![1]
-            
+            let name = alert.textFields![0]
             let context = getContext()
-            let semester = Semester(context: context)
+            let studyPlan = StudyPlan(context: context)
             
-            semester.number = Int16(numberField.text!)!
-            semester.year = Int16(yearField.text!)!
-            semester.studyPlan = self.studyPlan
+            studyPlan.name = name.text
+            studyPlan.studyPlanInverse = self.student
             
             do{
                 try context.save()
-                self.getSemesters()
+                self.getStudyPlans()
                 self.tableView.reloadData()
             }
             catch let error as NSError{
@@ -122,6 +101,18 @@ class SemestersTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! StudyPlanTableViewCell
+        let index = self.tableView.indexPath(for: cell)!.row
+        
+        let splitView = segue.destination as! SemestersSplitViewController
+        let navigationController = splitView.viewControllers[0] as! UINavigationController
+        let semestersController = navigationController.topViewController as! SemestersTableViewController
+        
+        semestersController.studyPlan = studyPlans[index]
+    }
+    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -54,7 +54,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-cQ-wSu">
-                                            <rect key="frame" x="352" y="26" width="25" height="25"/>
+                                            <rect key="frame" x="332" y="26" width="25" height="25"/>
                                             <state key="normal" backgroundImage="RightArrow">
                                                 <color key="titleColor" red="0.2603447237" green="0.55277264459999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
@@ -63,7 +63,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-HT-MsD">
-                                            <rect key="frame" x="8" y="37" width="72" height="14"/>
+                                            <rect key="frame" x="8" y="37" width="40" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -77,15 +77,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sIK-HT-MsD" firstAttribute="top" secondItem="VIp-QQ-sx6" secondAttribute="topMargin" constant="29" id="0mh-qZ-ra1"/>
-                                        <constraint firstItem="0zj-cQ-wSu" firstAttribute="leading" secondItem="I84-H9-zNe" secondAttribute="trailing" constant="272" id="ItC-Ql-oYf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0zj-cQ-wSu" secondAttribute="trailing" constant="10" id="CUK-f0-Goq"/>
                                         <constraint firstItem="sIK-HT-MsD" firstAttribute="leading" secondItem="VIp-QQ-sx6" secondAttribute="leadingMargin" id="JoV-78-Qac"/>
                                         <constraint firstItem="I84-H9-zNe" firstAttribute="top" secondItem="VIp-QQ-sx6" secondAttribute="topMargin" constant="11" id="NzO-qQ-2XD"/>
                                         <constraint firstItem="I84-H9-zNe" firstAttribute="leading" secondItem="VIp-QQ-sx6" secondAttribute="leadingMargin" id="QCY-fx-20D"/>
-                                        <constraint firstItem="I84-H9-zNe" firstAttribute="top" secondItem="VIp-QQ-sx6" secondAttribute="topMargin" constant="11" id="SbL-5Y-0Db"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sIK-HT-MsD" secondAttribute="bottom" constant="17" id="cme-xy-o8J"/>
                                         <constraint firstItem="0zj-cQ-wSu" firstAttribute="bottom" secondItem="sIK-HT-MsD" secondAttribute="bottom" id="gui-vq-IWz"/>
-                                        <constraint firstItem="0zj-cQ-wSu" firstAttribute="leading" secondItem="sIK-HT-MsD" secondAttribute="trailing" constant="272" id="pvs-qH-Y77"/>
-                                        <constraint firstItem="I84-H9-zNe" firstAttribute="leading" secondItem="VIp-QQ-sx6" secondAttribute="leadingMargin" id="qHB-e4-nQO"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="I84-H9-zNe" secondAttribute="bottom" constant="28.5" id="uHq-Dh-nXB"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -101,7 +98,13 @@
                             <outlet property="delegate" destination="9yw-xp-qn7" id="h9s-Tr-teR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Semestres" id="RKX-na-NCz"/>
+                    <navigationItem key="navigationItem" title="Semestres" id="RKX-na-NCz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GOc-pz-Qg3">
+                            <connections>
+                                <action selector="onClickAddSemesterButton:" destination="9yw-xp-qn7" id="w04-3K-3SK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1Y-k4-y8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="908" y="-154"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Semesters Split View Controller-->
         <scene sceneID="rzJ-KY-TuI">
             <objects>
-                <splitViewController id="V6D-4v-iuX" sceneMemberID="viewController">
+                <splitViewController id="V6D-4v-iuX" customClass="SemestersSplitViewController" customModule="SanAcademics" sceneMemberID="viewController">
                     <connections>
                         <segue destination="H26-w0-VNJ" kind="relationship" relationship="masterViewController" id="goZ-lH-GSw"/>
                         <segue destination="Ejm-Qn-9uF" kind="relationship" relationship="detailViewController" id="GSO-EC-e8m"/>

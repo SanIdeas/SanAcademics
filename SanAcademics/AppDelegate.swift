@@ -88,6 +88,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Init", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateInitialViewController() as! StudentsViewController
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "StudyPlansNavigationController") as! UINavigationController
+        
+        initialViewController.getCreatedStudent()
+        if(initialViewController.student != nil){
+            let studyPlansController = navigationController.topViewController as! StudyPlansTableViewController
+            studyPlansController.student = initialViewController.student
+            self.window!.rootViewController = navigationController
+        }
+        else{
+            self.window!.rootViewController = initialViewController
+        }
+        
+        self.window!.makeKeyAndVisible()
+        return true
+    }
 }
 
