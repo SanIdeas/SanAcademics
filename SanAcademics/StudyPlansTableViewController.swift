@@ -88,8 +88,10 @@ class StudyPlansTableViewController: UITableViewController {
             
             do{
                 try context.save()
-                self.getStudyPlans()
-                self.tableView.reloadData()
+                
+                let newIndexPath = IndexPath(row: self.studyPlans.count, section: 0)
+                self.studyPlans.append(studyPlan)
+                self.tableView.insertRows(at: [newIndexPath], with: .bottom)
             }
             catch let error as NSError{
                 print("Could not save \(error), \(error.userInfo)")

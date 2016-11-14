@@ -14,7 +14,9 @@
     <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
         <attribute name="abbreviation" attributeType="String" syncable="YES"/>
         <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="block" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="credits" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="formula" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="assessmentTypeInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssessmentType" inverseName="course" inverseEntity="AssessmentType" syncable="YES"/>
@@ -39,11 +41,11 @@
         <relationship name="studyPlanInverse" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="studyPlan" inverseEntity="Student" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Course" positionX="-137" positionY="155" width="128" height="148"/>
+        <element name="Assessment" positionX="162" positionY="407" width="128" height="88"/>
+        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="103"/>
+        <element name="Course" positionX="-137" positionY="155" width="128" height="178"/>
         <element name="Semester" positionX="169" positionY="95" width="128" height="118"/>
         <element name="Student" positionX="-198" positionY="-19" width="117" height="73"/>
         <element name="StudyPlan" positionX="108" positionY="-52" width="128" height="118"/>
-        <element name="Assessment" positionX="162" positionY="407" width="128" height="88"/>
-        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="103"/>
     </elements>
 </model>
