@@ -89,9 +89,9 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         let index = self.tableView.indexPath(for: cell)!.row
         
         let tabBarController = segue.destination as! UITabBarController
-        let courseTableViewController = tabBarController.viewControllers![0] as! CoursesTableViewController
-        courseTableViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
-        courseTableViewController.semester = semesters[index]
+        //let courseTableViewController = tabBarController.viewControllers![0] as! CoursesTableViewController
+        //courseTableViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
+        //courseTableViewController.semester = semesters[index]
     }
 
     @IBAction func onClickAddSemesterButton(_ sender: Any) {

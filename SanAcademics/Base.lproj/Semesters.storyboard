@@ -13,7 +13,7 @@
         <!--Asignaturas-->
         <scene sceneID="aTj-B4-AgG">
             <objects>
-                <tableViewController id="OPz-jv-Vri" customClass="CoursesTableViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OPz-jv-Vri" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jW0-f1-M2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,9 +63,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Asignaturas" image="Books" id="o7H-ep-hOu"/>
-                    <connections>
-                        <outlet property="grade" destination="P5m-DA-CJ5" id="reU-rz-0ap"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPc-Rs-LFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oSl-4L-YXk" id="VIp-QQ-sx6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-cQ-wSu">
@@ -182,6 +179,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pg0-0c-e8h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rd7-wE-MU2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
