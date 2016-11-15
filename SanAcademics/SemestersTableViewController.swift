@@ -1,4 +1,4 @@
-//
+		//
 //  SemestersTableViewController.swift
 //  SanAcademics
 //
@@ -88,9 +88,10 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         let cell = contentView.superview! as! SemesterTableViewCell
         let index = self.tableView.indexPath(for: cell)!.row
         
-        let semesterViewController = segue.destination as! SemesterViewController
-        semesterViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
-        semesterViewController.semester = semesters[index]
+        let tabBarController = segue.destination as! UITabBarController
+        let courseTableViewController = tabBarController.viewControllers![0] as! CoursesTableViewController
+        courseTableViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
+        courseTableViewController.semester = semesters[index]
     }
 
     @IBAction func onClickAddSemesterButton(_ sender: Any) {

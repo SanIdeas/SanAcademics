@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */; };
 		FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60461DD8F89500F79418 /* AppDelegate.swift */; };
 		FAAA604C1DD8F89500F79418 /* Semesters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA604A1DD8F89500F79418 /* Semesters.storyboard */; };
 		FAAA60511DD8F89500F79418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60501DD8F89500F79418 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		FAAA60431DD8F89500F79418 /* SanAcademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanAcademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA60461DD8F89500F79418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA604B1DD8F89500F79418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Semesters.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F79A7911DDAA7E100EF2E90 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
 		FAAA603A1DD8F89500F79418 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		FAAA606E1DD8F95800F79418 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F79A7911DDAA7E100EF2E90 /* Courses */,
 				FAAA607B1DD926C800F79418 /* Students */,
 				FAAA60761DD9226200F79418 /* StudyPlans */,
 				FAAA60741DD91DC600F79418 /* Semesters */,
@@ -281,6 +292,7 @@
 				FAAA60781DD9228500F79418 /* StudyPlansTableViewController.swift in Sources */,
 				FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */,
 				FAAA607A1DD9231D00F79418 /* StudyPlanTableViewCell.swift in Sources */,
+				5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */,
 				FAAA60801DD9289300F79418 /* Utilities.swift in Sources */,
 				FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */,
 			);
