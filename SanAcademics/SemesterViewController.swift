@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SemesterViewController: UIViewController {
+class SemesterViewController: UITabBarController {
     var semester: Semester?
 
     override func viewDidLoad() {

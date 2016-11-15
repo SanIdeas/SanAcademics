@@ -89,6 +89,7 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         let index = self.tableView.indexPath(for: cell)!.row
         
         let semesterViewController = segue.destination as! SemesterViewController
+        semesterViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
         semesterViewController.semester = semesters[index]
     }
 

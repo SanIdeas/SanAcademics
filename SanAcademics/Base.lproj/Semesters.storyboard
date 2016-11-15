@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V6D-4v-iuX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V6D-4v-iuX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Semester View Controller-->
+        <!--Asignaturas-->
         <scene sceneID="nhF-SM-gDb">
             <objects>
                 <viewController id="Ejm-Qn-9uF" customClass="SemesterViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,20 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXAMPLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AO-4t-0FH">
-                                <rect key="frame" x="149" y="323" width="76" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="asd" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jyk-xo-WeX">
+                                <rect key="frame" x="139" y="318" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95972409344845133" green="0.95841559839654478" blue="0.9812717476906736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Asignaturas" image="Books" id="dtN-Lb-whM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDy-Dw-b2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="681"/>
+            <point key="canvasLocation" x="2649" y="372"/>
         </scene>
         <!--Semestres-->
         <scene sceneID="MUV-lT-Cri">
@@ -50,16 +51,16 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oSl-4L-YXk" id="VIp-QQ-sx6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-cQ-wSu">
-                                            <rect key="frame" x="332" y="26" width="25" height="25"/>
-                                            <state key="normal" backgroundImage="RightArrow">
+                                            <rect key="frame" x="333" y="27" width="24" height="24"/>
+                                            <state key="normal" backgroundImage="Arrow">
                                                 <color key="titleColor" red="0.2603447237" green="0.55277264459999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <segue destination="Ejm-Qn-9uF" kind="show" id="anf-cE-RCn"/>
+                                                <segue destination="pg0-0c-e8h" kind="show" id="anf-cE-RCn"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-HT-MsD">
@@ -135,16 +136,64 @@
                 <splitViewController id="V6D-4v-iuX" customClass="SemestersSplitViewController" customModule="SanAcademics" sceneMemberID="viewController">
                     <connections>
                         <segue destination="H26-w0-VNJ" kind="relationship" relationship="masterViewController" id="goZ-lH-GSw"/>
-                        <segue destination="Ejm-Qn-9uF" kind="relationship" relationship="detailViewController" id="GSO-EC-e8m"/>
+                        <segue destination="pg0-0c-e8h" kind="relationship" relationship="detailViewController" id="GSO-EC-e8m"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5RG-oe-HOL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-44" y="172"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3eL-Fd-cbB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pg0-0c-e8h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rd7-wE-MU2">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ejm-Qn-9uF" kind="relationship" relationship="viewControllers" id="y8O-Uz-JTx"/>
+                        <segue destination="PL1-RN-Tba" kind="relationship" relationship="viewControllers" id="GJh-Cn-C5q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XMw-hd-CJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="680.5097451274363"/>
+        </scene>
+        <!--Horario-->
+        <scene sceneID="kzI-Wr-HbD">
+            <objects>
+                <viewController id="PL1-RN-Tba" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9HY-tq-y3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="6oY-24-JvR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3BS-Mf-JQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fer" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPR-zq-ulo">
+                                <rect key="frame" x="139" y="305" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95972409339999998" green="0.95841559840000001" blue="0.98127174770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Horario" image="Clock" id="71K-2a-EUZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTH-2x-TtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="1066"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="RightArrow" width="25" height="25"/>
+        <image name="Arrow" width="24" height="24"/>
+        <image name="Books" width="24" height="24"/>
+        <image name="Clock" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="anf-cE-RCn"/>
