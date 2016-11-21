@@ -53,6 +53,10 @@ class StudyPlansTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func getStudyPlans(){
         let context = getContext()
         let fetchRequest: NSFetchRequest<StudyPlan> = StudyPlan.fetchRequest()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V6D-4v-iuX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V6D-4v-iuX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,17 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Asignaturas-->
+        <!--Courses Table View Controller-->
         <scene sceneID="aTj-B4-AgG">
             <objects>
-                <tableViewController id="OPz-jv-Vri" sceneMemberID="viewController">
+                <tableViewController id="OPz-jv-Vri" customClass="CoursesTableViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jW0-f1-M2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.97804109380000004" green="0.97670762519999998" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Jdg-ha-n21">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="Jdg-ha-n21" customClass="CourseTableViewCell" customModule="SanAcademics" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jdg-ha-n21" id="P5m-DA-CJ5">
@@ -55,6 +55,10 @@
                                         <constraint firstItem="467-6y-TPn" firstAttribute="top" secondItem="P5m-DA-CJ5" secondAttribute="top" id="unZ-iJ-nOc"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="average" destination="467-6y-TPn" id="moa-ay-gFD"/>
+                                    <outlet property="course" destination="J7G-c0-h77" id="Cvo-f3-C53"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,11 +66,11 @@
                             <outlet property="delegate" destination="OPz-jv-Vri" id="apH-DP-x7F"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Asignaturas" image="Books" id="o7H-ep-hOu"/>
+                    <navigationItem key="navigationItem" id="IdW-ni-raF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPc-Rs-LFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648.8000000000002" y="418.74062968515744"/>
+            <point key="canvasLocation" x="3588" y="418.74062968515744"/>
         </scene>
         <!--Semestres-->
         <scene sceneID="MUV-lT-Cri">
@@ -90,7 +94,7 @@
                                                 <color key="titleColor" red="0.2603447237" green="0.55277264459999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <segue destination="pg0-0c-e8h" kind="show" id="anf-cE-RCn"/>
+                                                <segue destination="pg0-0c-e8h" kind="show" action="showDetailViewController:sender:" id="anf-cE-RCn"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-HT-MsD">
@@ -173,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="-44" y="172"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Schedule Courses Tab Bar View Controller-->
         <scene sceneID="3eL-Fd-cbB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pg0-0c-e8h" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pg0-0c-e8h" customClass="ScheduleCoursesTabBarViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rd7-wE-MU2">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -184,24 +188,25 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OPz-jv-Vri" kind="relationship" relationship="viewControllers" id="ajb-bO-nZx"/>
-                        <segue destination="8Jf-k2-kn2" kind="relationship" relationship="viewControllers" id="CPf-M5-Rgj"/>
+                        <segue destination="4IJ-is-XbP" kind="relationship" relationship="viewControllers" id="ajb-bO-nZx"/>
+                        <segue destination="xuy-oG-K89" kind="relationship" relationship="viewControllers" id="CPf-M5-Rgj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMw-hd-CJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1856.8" y="680.5097451274363"/>
         </scene>
-        <!--Horario-->
+        <!--Schedule Table View Controller-->
         <scene sceneID="dX8-i3-cuS">
             <objects>
-                <tableViewController id="8Jf-k2-kn2" sceneMemberID="viewController">
+                <tableViewController id="8Jf-k2-kn2" customClass="ScheduleTableViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ijt-Cx-IOh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="34B-yH-k8d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScheduleCell" id="34B-yH-k8d" customClass="ScheduleTableViewCell" customModule="SanAcademics" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="34B-yH-k8d" id="lG8-xh-1WA">
@@ -233,6 +238,10 @@
                                         <constraint firstAttribute="bottom" secondItem="C57-KL-AAb" secondAttribute="bottom" id="jOn-dI-nEK"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="block" destination="lfv-iH-xO0" id="RAX-Ed-CdQ"/>
+                                    <outlet property="course" destination="C57-KL-AAb" id="7ib-XQ-eh2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -240,9 +249,47 @@
                             <outlet property="delegate" destination="8Jf-k2-kn2" id="OmK-Ld-Tk6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Horario" image="Clock" id="01D-a2-vFX"/>
+                    <navigationItem key="navigationItem" id="Y7i-CI-p9e"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlE-5x-mzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3588" y="1198"/>
+        </scene>
+        <!--Asignaturas-->
+        <scene sceneID="6Pp-jc-M6T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4IJ-is-XbP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Asignaturas" image="Books" id="o7H-ep-hOu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ViF-wv-fy3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OPz-jv-Vri" kind="relationship" relationship="rootViewController" id="W8c-TY-f2l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ce-Uu-xNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648.8000000000002" y="418.74062968515744"/>
+        </scene>
+        <!--Horario-->
+        <scene sceneID="9a3-d3-1Pk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xuy-oG-K89" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Horario" image="Clock" id="01D-a2-vFX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPQ-3Q-EiG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Jf-k2-kn2" kind="relationship" relationship="rootViewController" id="B0F-V7-QRO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqK-ZI-Td9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2648.8000000000002" y="1107.7961019490256"/>
         </scene>

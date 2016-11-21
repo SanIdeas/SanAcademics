@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */; };
+		FA2566F91DDAB99200C4C25D /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2566F81DDAB99200C4C25D /* ScheduleTableViewController.swift */; };
+		FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */; };
+		FA8D74671DE2B0E100DF11C3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */; };
+		FA8D746D1DE2B82F00DF11C3 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */; };
 		FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60461DD8F89500F79418 /* AppDelegate.swift */; };
 		FAAA604C1DD8F89500F79418 /* Semesters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA604A1DD8F89500F79418 /* Semesters.storyboard */; };
 		FAAA60511DD8F89500F79418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60501DD8F89500F79418 /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
+		FA2566F81DDAB99200C4C25D /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCoursesTabBarViewController.swift; sourceTree = "<group>"; };
+		FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		FAAA60431DD8F89500F79418 /* SanAcademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanAcademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA60461DD8F89500F79418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA604B1DD8F89500F79418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Semesters.storyboard; sourceTree = "<group>"; };
@@ -81,6 +89,22 @@
 				5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */,
 			);
 			name = Courses;
+			sourceTree = "<group>";
+		};
+		FA2566F71DDAB97D00C4C25D /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FA2566F81DDAB99200C4C25D /* ScheduleTableViewController.swift */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		FA8D74611DE2A0C600DF11C3 /* ScheduleCourses */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */,
+			);
+			name = ScheduleCourses;
 			sourceTree = "<group>";
 		};
 		FAAA603A1DD8F89500F79418 = {
@@ -127,6 +151,8 @@
 		FAAA606E1DD8F95800F79418 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA8D74611DE2A0C600DF11C3 /* ScheduleCourses */,
+				FA2566F71DDAB97D00C4C25D /* Schedule */,
 				5F79A7911DDAA7E100EF2E90 /* Courses */,
 				FAAA607B1DD926C800F79418 /* Students */,
 				FAAA60761DD9226200F79418 /* StudyPlans */,
@@ -160,6 +186,8 @@
 			children = (
 				FAAA605E1DD8F90300F79418 /* SemesterTableViewCell.swift */,
 				FAAA60791DD9231D00F79418 /* StudyPlanTableViewCell.swift */,
+				FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */,
+				FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -284,17 +312,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2566F91DDAB99200C4C25D /* ScheduleTableViewController.swift in Sources */,
 				FAAA60601DD8F90300F79418 /* SanAcademics.xcdatamodeld in Sources */,
 				FAAA60711DD8FD8100F79418 /* SemestersSplitViewController.swift in Sources */,
+				FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */,
 				FAAA607D1DD926E100F79418 /* StudentsViewController.swift in Sources */,
 				FAAA60631DD8F90300F79418 /* SemesterViewController.swift in Sources */,
 				FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */,
 				FAAA60781DD9228500F79418 /* StudyPlansTableViewController.swift in Sources */,
+				FA8D74671DE2B0E100DF11C3 /* ScheduleTableViewCell.swift in Sources */,
 				FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */,
 				FAAA607A1DD9231D00F79418 /* StudyPlanTableViewCell.swift in Sources */,
 				5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */,
 				FAAA60801DD9289300F79418 /* Utilities.swift in Sources */,
 				FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */,
+				FA8D746D1DE2B82F00DF11C3 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +370,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -388,6 +421,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

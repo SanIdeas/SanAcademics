@@ -68,6 +68,10 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
     func getSemesters(){
         let context = getContext()
         let predicate = NSPredicate(format: "studyPlan == %@", studyPlan!)
@@ -88,10 +92,16 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         let cell = contentView.superview! as! SemesterTableViewCell
         let index = self.tableView.indexPath(for: cell)!.row
         
-        let tabBarController = segue.destination as! UITabBarController
-        //let courseTableViewController = tabBarController.viewControllers![0] as! CoursesTableViewController
-        //courseTableViewController.title = "\(semesters[index].number) - \(semesters[index].year)"
-        //courseTableViewController.semester = semesters[index]
+        let tabBarController = segue.destination as! ScheduleCoursesTabBarViewController
+        
+        let coursesNavigationController = tabBarController.viewControllers![0] as!  UINavigationController
+        let scheduleNavigationController = tabBarController.viewControllers![1] as! UINavigationController
+        
+        let coursesTableViewController = coursesNavigationController.viewControllers[0] as!  CoursesTableViewController
+        let scheduleTableViewController = scheduleNavigationController.viewControllers[0] as! ScheduleTableViewController
+        
+        coursesTableViewController.semester = semesters[index]
+        scheduleTableViewController.semester = semesters[index]
     }
 
     @IBAction func onClickAddSemesterButton(_ sender: Any) {
