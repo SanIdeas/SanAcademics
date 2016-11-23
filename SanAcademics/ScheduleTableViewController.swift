@@ -12,7 +12,7 @@ import CoreData
 class ScheduleTableViewController: UITableViewController {
     var weekDayNumber: Int? // Sunday: 1; Saturday: 7
     var semester: Semester?
-    var courses = [Course]()
+    var schedules = [Schedule]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,10 @@ class ScheduleTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        self.tabBarController?.navigationItem.title = "Horario de Hoy"
         
-        getCourses()
+        getSchedules()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +43,43 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return courses.count
+        return schedules.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! ScheduleTableViewCell
+        var block: String?
+        
+        switch(schedules[indexPath.row].block){
+            case 1:
+                block = "1-2"
+                break
+            case 2:
+                block = "3-4"
+                break
+            case 3:
+                block = "5-6"
+                break
+            case 4:
+                block = "7-8"
+                break
+            case 5:
+                block = "9-10"
+                break
+            case 6:
+                block = "11-12"
+                break
+            case 7:
+                block = "13-14"
+                break
+            default:
+                block = "1-2"
+                break
+        }
 
         // Configure the cell...
-        cell.block.text = String(courses[indexPath.row].block)
-        cell.course.text = courses[indexPath.row].abbreviation
+        cell.block.text = block
+        cell.course.text = schedules[indexPath.row].course!.abbreviation
 
         return cell
     }
@@ -60,16 +90,18 @@ class ScheduleTableViewController: UITableViewController {
         weekDayNumber = calendar.component(.weekday, from: date)
     }
     
-    func getCourses(){
+    func getSchedules(){
         getWeekDay()
         
         let context = getContext()
-        let predicate = NSPredicate(format: "semester == %@ AND day == %d", semester!, weekDayNumber!)
-        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+        let predicate = NSPredicate(format: "course.semester == %@ AND day == %d", semester!, weekDayNumber!)
+        let sectionSortDescriptor = NSSortDescriptor(key: "block", ascending: true)
+        let fetchRequest: NSFetchRequest<Schedule> = Schedule.fetchRequest()
         fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sectionSortDescriptor]
         
         do{
-            courses = try context.fetch(fetchRequest)
+            schedules = try context.fetch(fetchRequest)
         }
         catch{
             print("Request error: \(error)")

@@ -158,7 +158,6 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
             // Delete the row from the data source
             let context = getContext()
             let semester = semesters[indexPath.row]
-            semester.studyPlan = nil
             
             context.delete(semester)
             do{

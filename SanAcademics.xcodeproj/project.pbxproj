@@ -12,6 +12,7 @@
 		FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */; };
 		FA8D74671DE2B0E100DF11C3 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */; };
 		FA8D746D1DE2B82F00DF11C3 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */; };
+		FA8D746F1DE3ACE000DF11C3 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D746E1DE3ACE000DF11C3 /* AddCourseViewController.swift */; };
 		FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60461DD8F89500F79418 /* AppDelegate.swift */; };
 		FAAA604C1DD8F89500F79418 /* Semesters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA604A1DD8F89500F79418 /* Semesters.storyboard */; };
 		FAAA60511DD8F89500F79418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60501DD8F89500F79418 /* Assets.xcassets */; };
@@ -27,6 +28,14 @@
 		FAAA607A1DD9231D00F79418 /* StudyPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60791DD9231D00F79418 /* StudyPlanTableViewCell.swift */; };
 		FAAA607D1DD926E100F79418 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA607C1DD926E100F79418 /* StudentsViewController.swift */; };
 		FAAA60801DD9289300F79418 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA607F1DD9289300F79418 /* Utilities.swift */; };
+		FABD5AB41DE3C65A0028D7AC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AB31DE3C65A0028D7AC /* Helpers.swift */; };
+		FABD5ABA1DE423EA0028D7AC /* AddScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AB91DE423EA0028D7AC /* AddScheduleTableViewCell.swift */; };
+		FABD5ABD1DE4B99F0028D7AC /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ABC1DE4B99F0028D7AC /* DaysTableViewController.swift */; };
+		FABD5ABF1DE4B9AC0028D7AC /* BlocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ABE1DE4B9AC0028D7AC /* BlocksTableViewController.swift */; };
+		FABD5AC51DE51DD10028D7AC /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AC41DE51DD10028D7AC /* CourseDetailViewController.swift */; };
+		FABD5AC71DE537C80028D7AC /* AssessmentTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AC61DE537C80028D7AC /* AssessmentTypeTableViewCell.swift */; };
+		FABD5AC91DE5615E0028D7AC /* AssessmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AC81DE5615E0028D7AC /* AssessmentTableViewCell.swift */; };
+		FABD5ACC1DE562550028D7AC /* AssessmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ACB1DE562550028D7AC /* AssessmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,7 @@
 		FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCoursesTabBarViewController.swift; sourceTree = "<group>"; };
 		FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		FA8D746E1DE3ACE000DF11C3 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		FAAA60431DD8F89500F79418 /* SanAcademics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanAcademics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA60461DD8F89500F79418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAA604B1DD8F89500F79418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Semesters.storyboard; sourceTree = "<group>"; };
@@ -69,6 +79,14 @@
 		FAAA60791DD9231D00F79418 /* StudyPlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanTableViewCell.swift; sourceTree = "<group>"; };
 		FAAA607C1DD926E100F79418 /* StudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		FAAA607F1DD9289300F79418 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FABD5AB31DE3C65A0028D7AC /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FABD5AB91DE423EA0028D7AC /* AddScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		FABD5ABC1DE4B99F0028D7AC /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
+		FABD5ABE1DE4B9AC0028D7AC /* BlocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksTableViewController.swift; sourceTree = "<group>"; };
+		FABD5AC41DE51DD10028D7AC /* CourseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		FABD5AC61DE537C80028D7AC /* AssessmentTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTypeTableViewCell.swift; sourceTree = "<group>"; };
+		FABD5AC81DE5615E0028D7AC /* AssessmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentTableViewCell.swift; sourceTree = "<group>"; };
+		FABD5ACB1DE562550028D7AC /* AssessmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */,
+				FA8D746E1DE3ACE000DF11C3 /* AddCourseViewController.swift */,
+				FABD5AC41DE51DD10028D7AC /* CourseDetailViewController.swift */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -127,6 +147,7 @@
 		FAAA60451DD8F89500F79418 /* SanAcademics */ = {
 			isa = PBXGroup;
 			children = (
+				FABD5AB01DE3C64C0028D7AC /* Helpers */,
 				FAAA607E1DD9288000F79418 /* Utilities */,
 				FAAA60751DD921EF00F79418 /* Views */,
 				FAAA606E1DD8F95800F79418 /* Controllers */,
@@ -151,6 +172,8 @@
 		FAAA606E1DD8F95800F79418 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FABD5ACA1DE5623F0028D7AC /* Assessments */,
+				FABD5ABB1DE4B9860028D7AC /* Others */,
 				FA8D74611DE2A0C600DF11C3 /* ScheduleCourses */,
 				FA2566F71DDAB97D00C4C25D /* Schedule */,
 				5F79A7911DDAA7E100EF2E90 /* Courses */,
@@ -188,6 +211,9 @@
 				FAAA60791DD9231D00F79418 /* StudyPlanTableViewCell.swift */,
 				FA8D74661DE2B0E100DF11C3 /* ScheduleTableViewCell.swift */,
 				FA8D746C1DE2B82F00DF11C3 /* CourseTableViewCell.swift */,
+				FABD5AB91DE423EA0028D7AC /* AddScheduleTableViewCell.swift */,
+				FABD5AC61DE537C80028D7AC /* AssessmentTypeTableViewCell.swift */,
+				FABD5AC81DE5615E0028D7AC /* AssessmentTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,6 +240,31 @@
 				FAAA607F1DD9289300F79418 /* Utilities.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		FABD5AB01DE3C64C0028D7AC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FABD5AB31DE3C65A0028D7AC /* Helpers.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FABD5ABB1DE4B9860028D7AC /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				FABD5ABC1DE4B99F0028D7AC /* DaysTableViewController.swift */,
+				FABD5ABE1DE4B9AC0028D7AC /* BlocksTableViewController.swift */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		FABD5ACA1DE5623F0028D7AC /* Assessments */ = {
+			isa = PBXGroup;
+			children = (
+				FABD5ACB1DE562550028D7AC /* AssessmentViewController.swift */,
+			);
+			name = Assessments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2566F91DDAB99200C4C25D /* ScheduleTableViewController.swift in Sources */,
+				FA8D746F1DE3ACE000DF11C3 /* AddCourseViewController.swift in Sources */,
 				FAAA60601DD8F90300F79418 /* SanAcademics.xcdatamodeld in Sources */,
 				FAAA60711DD8FD8100F79418 /* SemestersSplitViewController.swift in Sources */,
 				FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */,
@@ -321,12 +373,20 @@
 				FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */,
 				FAAA60781DD9228500F79418 /* StudyPlansTableViewController.swift in Sources */,
 				FA8D74671DE2B0E100DF11C3 /* ScheduleTableViewCell.swift in Sources */,
+				FABD5AC91DE5615E0028D7AC /* AssessmentTableViewCell.swift in Sources */,
+				FABD5AB41DE3C65A0028D7AC /* Helpers.swift in Sources */,
 				FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */,
 				FAAA607A1DD9231D00F79418 /* StudyPlanTableViewCell.swift in Sources */,
+				FABD5ACC1DE562550028D7AC /* AssessmentViewController.swift in Sources */,
+				FABD5AC51DE51DD10028D7AC /* CourseDetailViewController.swift in Sources */,
 				5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */,
+				FABD5ABA1DE423EA0028D7AC /* AddScheduleTableViewCell.swift in Sources */,
 				FAAA60801DD9289300F79418 /* Utilities.swift in Sources */,
 				FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */,
 				FA8D746D1DE2B82F00DF11C3 /* CourseTableViewCell.swift in Sources */,
+				FABD5AC71DE537C80028D7AC /* AssessmentTypeTableViewCell.swift in Sources */,
+				FABD5ABD1DE4B99F0028D7AC /* DaysTableViewController.swift in Sources */,
+				FABD5ABF1DE4B9AC0028D7AC /* BlocksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

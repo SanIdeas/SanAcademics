@@ -2,50 +2,57 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
         <attribute name="grade" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="assessmentType" maxCount="1" deletionRule="Cascade" destinationEntity="AssessmentType" inverseName="assessmentInverse" inverseEntity="AssessmentType" syncable="YES"/>
+        <relationship name="assessmentType" maxCount="1" deletionRule="Nullify" destinationEntity="AssessmentType" inverseName="assessmentInverse" inverseEntity="AssessmentType" syncable="YES"/>
     </entity>
     <entity name="AssessmentType" representedClassName="AssessmentType" syncable="YES" codeGenerationType="class">
-        <attribute name="formula" attributeType="String" syncable="YES"/>
+        <attribute name="formula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="assessmentInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assessment" inverseName="assessmentType" inverseEntity="Assessment" syncable="YES"/>
-        <relationship name="course" maxCount="1" deletionRule="Cascade" destinationEntity="Course" inverseName="assessmentTypeInverse" inverseEntity="Course" syncable="YES"/>
+        <relationship name="assessmentInverse" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Assessment" inverseName="assessmentType" inverseEntity="Assessment" syncable="YES"/>
+        <relationship name="course" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="assessmentTypeInverse" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
         <attribute name="abbreviation" attributeType="String" syncable="YES"/>
         <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="block" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="credits" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="day" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="formula" attributeType="String" syncable="YES"/>
+        <attribute name="formula" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="assessmentTypeInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssessmentType" inverseName="course" inverseEntity="AssessmentType" syncable="YES"/>
-        <relationship name="semester" maxCount="1" deletionRule="Cascade" destinationEntity="Semester" inverseName="courseInverse" inverseEntity="Semester" syncable="YES"/>
+        <relationship name="assessmentTypeInverse" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AssessmentType" inverseName="course" inverseEntity="AssessmentType" syncable="YES"/>
+        <relationship name="scheduleInverse" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Schedule" inverseName="course" inverseEntity="Schedule" syncable="YES"/>
+        <relationship name="semester" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="courseInverse" inverseEntity="Semester" syncable="YES"/>
+    </entity>
+    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class">
+        <attribute name="block" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="day" attributeType="Integer 16" defaultValueString="2" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="course" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="scheduleInverse" inverseEntity="Course" syncable="YES"/>
     </entity>
     <entity name="Semester" representedClassName="Semester" syncable="YES" codeGenerationType="class">
         <attribute name="fae" attributeType="Float" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="number" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="year" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="courseInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="semester" inverseEntity="Course" syncable="YES"/>
-        <relationship name="studyPlan" maxCount="1" deletionRule="Cascade" destinationEntity="StudyPlan" inverseName="semesterInverse" inverseEntity="StudyPlan" syncable="YES"/>
+        <relationship name="courseInverse" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="semester" inverseEntity="Course" syncable="YES"/>
+        <relationship name="studyPlan" maxCount="1" deletionRule="Nullify" destinationEntity="StudyPlan" inverseName="semesterInverse" inverseEntity="StudyPlan" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="studyPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StudyPlan" inverseName="studyPlanInverse" inverseEntity="StudyPlan" syncable="YES"/>
+        <relationship name="studyPlan" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudyPlan" inverseName="studyPlanInverse" inverseEntity="StudyPlan" syncable="YES"/>
     </entity>
     <entity name="StudyPlan" representedClassName="StudyPlan" syncable="YES" codeGenerationType="class">
         <attribute name="academicPriority" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="semesterInverse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Semester" inverseName="studyPlan" inverseEntity="Semester" syncable="YES"/>
-        <relationship name="studyPlanInverse" maxCount="1" deletionRule="Cascade" destinationEntity="Student" inverseName="studyPlan" inverseEntity="Student" syncable="YES"/>
+        <relationship name="semesterInverse" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Semester" inverseName="studyPlan" inverseEntity="Semester" syncable="YES"/>
+        <relationship name="studyPlanInverse" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="studyPlan" inverseEntity="Student" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assessment" positionX="162" positionY="407" width="128" height="88"/>
-        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="103"/>
-        <element name="Course" positionX="-137" positionY="155" width="128" height="178"/>
+        <element name="Assessment" positionX="162" positionY="407" width="128" height="103"/>
+        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="118"/>
+        <element name="Course" positionX="-137" positionY="155" width="128" height="163"/>
         <element name="Semester" positionX="169" positionY="95" width="128" height="118"/>
         <element name="Student" positionX="-198" positionY="-19" width="117" height="73"/>
         <element name="StudyPlan" positionX="108" positionY="-52" width="128" height="118"/>
+        <element name="Schedule" positionX="-450" positionY="245" width="128" height="88"/>
     </elements>
 </model>
