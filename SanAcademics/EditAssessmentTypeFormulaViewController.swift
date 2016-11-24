@@ -17,12 +17,8 @@ class EditAssessmentTypeFormulaViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if(assessmentType!.formula != nil){
-            formula.text = assessmentType!.formula
-        }
-        else{
-            formula.text = "-"
-        }
+        formula.text = assessmentType!.formula
+        self.automaticallyAdjustsScrollViewInsets = false
     }
 
     override func didReceiveMemoryWarning() {

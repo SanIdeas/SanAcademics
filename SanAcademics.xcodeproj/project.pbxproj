@@ -38,6 +38,8 @@
 		FABD5ACC1DE562550028D7AC /* AssessmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ACB1DE562550028D7AC /* AssessmentViewController.swift */; };
 		FABD5ACE1DE6579E0028D7AC /* EditCourseFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ACD1DE6579E0028D7AC /* EditCourseFormulaViewController.swift */; };
 		FABD5AD01DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */; };
+		FABD5AD21DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */; };
+		FABD5AD41DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD31DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		FABD5ACB1DE562550028D7AC /* AssessmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssessmentViewController.swift; sourceTree = "<group>"; };
 		FABD5ACD1DE6579E0028D7AC /* EditCourseFormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseFormulaViewController.swift; sourceTree = "<group>"; };
 		FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAssessmentTypeFormulaViewController.swift; sourceTree = "<group>"; };
+		FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierAssessmentTypeTableViewController.swift; sourceTree = "<group>"; };
+		FABD5AD31DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierAssessmentTypeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,7 @@
 				FABD5AB91DE423EA0028D7AC /* AddScheduleTableViewCell.swift */,
 				FABD5AC61DE537C80028D7AC /* AssessmentTypeTableViewCell.swift */,
 				FABD5AC81DE5615E0028D7AC /* AssessmentTableViewCell.swift */,
+				FABD5AD31DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				FABD5ABE1DE4B9AC0028D7AC /* BlocksTableViewController.swift */,
 				FABD5ACD1DE6579E0028D7AC /* EditCourseFormulaViewController.swift */,
 				FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */,
+				FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2566F91DDAB99200C4C25D /* ScheduleTableViewController.swift in Sources */,
+				FABD5AD21DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift in Sources */,
 				FA8D746F1DE3ACE000DF11C3 /* AddCourseViewController.swift in Sources */,
 				FAAA60601DD8F90300F79418 /* SanAcademics.xcdatamodeld in Sources */,
 				FAAA60711DD8FD8100F79418 /* SemestersSplitViewController.swift in Sources */,
@@ -388,6 +395,7 @@
 				FABD5AC51DE51DD10028D7AC /* CourseDetailViewController.swift in Sources */,
 				5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */,
 				FABD5ABA1DE423EA0028D7AC /* AddScheduleTableViewCell.swift in Sources */,
+				FABD5AD41DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift in Sources */,
 				FAAA60801DD9289300F79418 /* Utilities.swift in Sources */,
 				FABD5ACE1DE6579E0028D7AC /* EditCourseFormulaViewController.swift in Sources */,
 				FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */,
