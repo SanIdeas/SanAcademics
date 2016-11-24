@@ -115,6 +115,22 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
         self.present(numberAlert!, animated: true, completion: nil)
     }
     
+    @IBAction func onCancelAddAssessmentTypeOperator(segue: UIStoryboardSegue){
+    }
+    
+    @IBAction func onAddAssessmentTypeOperator(segue: UIStoryboardSegue){
+        let controller = segue.source as! OperatorAssessmentTypeTableViewController
+        formula.replace(formula.selectedTextRange!, withText: " \(controller.selectedOperator!) ")
+    }
+    
+    @IBAction func onCancelAddAssessmentTypeFunction(segue: UIStoryboardSegue){
+    }
+    
+    @IBAction func onAddAssessmentTypeFunction(segue: UIStoryboardSegue){
+        let controller = segue.source as! FunctionAssessmentTypeTableViewController
+        formula.replace(formula.selectedTextRange!, withText: " \(controller.selectedFunction!) ")
+    }
+    
     @IBAction func onAddBlock(_ sender: Any) {
         formula.replace(formula.selectedTextRange!, withText: " ( ) ")
     }

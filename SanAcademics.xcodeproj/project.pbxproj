@@ -40,6 +40,8 @@
 		FABD5AD01DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */; };
 		FABD5AD21DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */; };
 		FABD5AD41DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD31DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift */; };
+		FABD5AD61DE6A7CA0028D7AC /* OperatorAssessmentTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD51DE6A7CA0028D7AC /* OperatorAssessmentTypeTableViewController.swift */; };
+		FABD5AD81DE6ADA30028D7AC /* FunctionAssessmentTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABD5AD71DE6ADA30028D7AC /* FunctionAssessmentTypeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAssessmentTypeFormulaViewController.swift; sourceTree = "<group>"; };
 		FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierAssessmentTypeTableViewController.swift; sourceTree = "<group>"; };
 		FABD5AD31DE68A5F0028D7AC /* IdentifierAssessmentTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierAssessmentTypeTableViewCell.swift; sourceTree = "<group>"; };
+		FABD5AD51DE6A7CA0028D7AC /* OperatorAssessmentTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorAssessmentTypeTableViewController.swift; sourceTree = "<group>"; };
+		FABD5AD71DE6ADA30028D7AC /* FunctionAssessmentTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionAssessmentTypeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +271,8 @@
 				FABD5ACD1DE6579E0028D7AC /* EditCourseFormulaViewController.swift */,
 				FABD5ACF1DE66F930028D7AC /* EditAssessmentTypeFormulaViewController.swift */,
 				FABD5AD11DE68A210028D7AC /* IdentifierAssessmentTypeTableViewController.swift */,
+				FABD5AD51DE6A7CA0028D7AC /* OperatorAssessmentTypeTableViewController.swift */,
+				FABD5AD71DE6ADA30028D7AC /* FunctionAssessmentTypeTableViewController.swift */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */,
 				FAAA607D1DD926E100F79418 /* StudentsViewController.swift in Sources */,
 				FAAA60631DD8F90300F79418 /* SemesterViewController.swift in Sources */,
+				FABD5AD61DE6A7CA0028D7AC /* OperatorAssessmentTypeTableViewController.swift in Sources */,
 				FAAA60471DD8F89500F79418 /* AppDelegate.swift in Sources */,
 				FAAA60781DD9228500F79418 /* StudyPlansTableViewController.swift in Sources */,
 				FA8D74671DE2B0E100DF11C3 /* ScheduleTableViewCell.swift in Sources */,
@@ -403,6 +410,7 @@
 				FABD5AC71DE537C80028D7AC /* AssessmentTypeTableViewCell.swift in Sources */,
 				FABD5ABD1DE4B99F0028D7AC /* DaysTableViewController.swift in Sources */,
 				FABD5ABF1DE4B9AC0028D7AC /* BlocksTableViewController.swift in Sources */,
+				FABD5AD81DE6ADA30028D7AC /* FunctionAssessmentTypeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
