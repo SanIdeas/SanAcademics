@@ -11,6 +11,7 @@ import UIKit
 class StudyPlanTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var academicPriority: UILabel!
+    @IBOutlet weak var average: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

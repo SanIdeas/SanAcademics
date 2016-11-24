@@ -51,10 +51,11 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
             if(textField == self.numberAlert!.textFields![0]){    // Number
                 let currentString = textField.text as NSString?
                 let newString = currentString?.replacingCharacters(in: range, with: string)
-                let times = newString?.components(separatedBy: ".")
+                let dotTimes = newString?.components(separatedBy: ".")
+                let commaTimes = newString?.components(separatedBy: ",")
                 
-                let invalidCharacters = CharacterSet(charactersIn: "0123456789.").inverted
-                return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil && times!.count <= 2
+                let invalidCharacters = CharacterSet(charactersIn: "0123456789.,").inverted
+                return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil && (dotTimes!.count <= 2 || commaTimes!.count <= 2)
             }
         }
         
@@ -70,7 +71,7 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
             let numberField = self.numberAlert!.textFields![0]
             let text = numberField.text
             
-            if(numberField.hasText && text![text!.index(before: text!.endIndex)] != "." && text![text!.startIndex] != "."){
+            if(numberField.hasText && (text![text!.index(before: text!.endIndex)] != "." || text![text!.index(before: text!.endIndex)] != ",") && (text![text!.startIndex] != "." || text![text!.startIndex] != ",")){
                 confirmAddNumberAction!.isEnabled = true
             }
             else{
@@ -105,7 +106,8 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
         // Confirm Button
         confirmAddNumberAction = UIAlertAction(title: "Agregar", style: .default, handler: {(_) in
             let numberField = self.numberAlert!.textFields![0]
-            self.formula.replace(self.formula.selectedTextRange!, withText: " \(numberField.text!) ")
+            let text = numberField.text!
+            self.formula.replace(self.formula.selectedTextRange!, withText: " \(text.replacingOccurrences(of: ",", with: ".")) ")
         })
         
         confirmAddNumberAction!.isEnabled = false

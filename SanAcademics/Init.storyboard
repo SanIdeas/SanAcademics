@@ -107,16 +107,25 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgy-yW-8gv">
+                                            <rect key="frame" x="8" y="51" width="39.5" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Qgy-yW-8gv" secondAttribute="leading" id="Jcm-OG-wka"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="lYC-zl-yyf" secondAttribute="leading" id="Xiz-Au-1ll"/>
                                         <constraint firstItem="lYC-zl-yyf" firstAttribute="top" secondItem="VgS-xY-6HC" secondAttribute="topMargin" constant="11" id="da1-9h-LKt"/>
                                         <constraint firstItem="AMy-qz-fIY" firstAttribute="top" secondItem="lYC-zl-yyf" secondAttribute="bottom" constant="-3" id="iYK-0p-nKG"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="AMy-qz-fIY" secondAttribute="leading" id="mXd-Fb-TCP"/>
+                                        <constraint firstItem="Qgy-yW-8gv" firstAttribute="top" secondItem="AMy-qz-fIY" secondAttribute="bottom" id="muH-qk-MH1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="academicPriority" destination="AMy-qz-fIY" id="bnC-ZG-m9S"/>
+                                    <outlet property="average" destination="Qgy-yW-8gv" id="vFP-ac-8nI"/>
                                     <outlet property="name" destination="lYC-zl-yyf" id="Nrs-PC-akI"/>
                                     <segue destination="N6p-QC-LbU" kind="presentation" id="sT1-I1-Ydz"/>
                                 </connections>

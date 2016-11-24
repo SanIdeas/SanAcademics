@@ -58,9 +58,9 @@ class StudyPlansTableViewController: UITableViewController {
 
         // Configure the cell...
         let studyPlan = studyPlans[indexPath.row]
-        
         cell.name.text = studyPlan.name
-        cell.academicPriority.text = "PA: \(studyPlan.academicPriority!)"
+        cell.academicPriority.text = "PA: \(String(format: "%.3f",studyPlan.academicPriority))"
+        cell.average.text = "Promedio: \(String(format: "%.3f",studyPlan.average))"
 
         return cell
     }

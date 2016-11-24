@@ -82,7 +82,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.identifier.text = assessmentTypes[indexPath.row].identifier
         cell.name.text = assessmentTypes[indexPath.row].name
-        cell.grade.text = String(assessmentTypes[indexPath.row].average)
+        cell.grade.text = String(format: "%.2f", assessmentTypes[indexPath.row].average)
         return cell
     }
 
@@ -212,7 +212,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func updateFormula(_ newFormula: String?){
-        if(newFormula != nil){
+        if(newFormula != nil && !newFormula!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty){
             formula.text = newFormula
         }
         else{
@@ -229,6 +229,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         updateFormula(newFormula)
         course!.updateFormula(newFormula)
+        course!.semester!.studyPlan!.updateGrades()
         coursesTableViewController!.tableView.reloadRows(at: [IndexPath(row: coursesTableViewController!.courses.index(of: course!)!, section: 0)], with: .automatic)
     }
     

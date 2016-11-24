@@ -82,7 +82,7 @@ class AssessmentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         cell.identifier.text = assessments[indexPath.row].identifier
         cell.name.text = assessments[indexPath.row].name
-        cell.grade.text = String(assessments[indexPath.row].grade)
+        cell.grade.text = String(format: "%.2f", assessments[indexPath.row].grade)
         return cell
     }
     
@@ -223,7 +223,7 @@ class AssessmentViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func updateFormula(_ newFormula: String?){
-        if(newFormula != nil){
+        if(newFormula != nil && !newFormula!.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty){
             formula.text = newFormula
         }
         else{
