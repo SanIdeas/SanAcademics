@@ -70,7 +70,7 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
             let numberField = self.numberAlert!.textFields![0]
             let text = numberField.text
             
-            if(numberField.hasText && text![text!.index(before: text!.endIndex)] != "."){
+            if(numberField.hasText && text![text!.index(before: text!.endIndex)] != "." && text![text!.startIndex] != "."){
                 confirmAddNumberAction!.isEnabled = true
             }
             else{
@@ -93,7 +93,7 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
         
         numberAlert!.addTextField{(textField) in
             textField.placeholder = "Número"
-            textField.keyboardType = UIKeyboardType.numberPad
+            textField.keyboardType = UIKeyboardType.decimalPad
             textField.delegate = self
             textField.addTarget(self, action: #selector(EditCourseFormulaViewController.editingChanged(_:)), for: .editingChanged)
         }
@@ -103,7 +103,7 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
         }))
         
         // Confirm Button
-        confirmAddNumberAction = UIAlertAction(title: "Crear", style: .default, handler: {(_) in
+        confirmAddNumberAction = UIAlertAction(title: "Agregar", style: .default, handler: {(_) in
             let numberField = self.numberAlert!.textFields![0]
             self.formula.replace(self.formula.selectedTextRange!, withText: " \(numberField.text!) ")
         })
@@ -134,15 +134,4 @@ class EditCourseFormulaViewController: UIViewController, UITextViewDelegate, UIT
     @IBAction func onAddBlock(_ sender: Any) {
         formula.replace(formula.selectedTextRange!, withText: " ( ) ")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

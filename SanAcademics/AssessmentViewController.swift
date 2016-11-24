@@ -214,6 +214,12 @@ class AssessmentViewController: UIViewController, UITableViewDelegate, UITableVi
             
             formulaController.assessmentType = assessmentType
         }
+        else if(segue.identifier == "EditAssessmentFormulaSegue"){
+            let navigationController = segue.destination as! UINavigationController
+            let formulaController = navigationController.viewControllers[0] as! EditAssessmentTypeFormulaViewController
+            
+            formulaController.assessmentType = assessmentType
+        }
     }
     
     func updateFormula(_ newFormula: String?){
