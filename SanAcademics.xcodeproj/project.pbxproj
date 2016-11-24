@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F01CD851DE6D81C00470CAE /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA606A1DD8F93900F79418 /* MathParser.framework */; };
+		5F01CD861DE6D81C00470CAE /* MathParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA606A1DD8F93900F79418 /* MathParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F79A78E1DDAA7CE00EF2E90 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */; };
 		FA2566F91DDAB99200C4C25D /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2566F81DDAB99200C4C25D /* ScheduleTableViewController.swift */; };
 		FA8D74651DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D74641DE2A0ED00DF11C3 /* ScheduleCoursesTabBarViewController.swift */; };
@@ -21,7 +23,6 @@
 		FAAA60611DD8F90300F79418 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605D1DD8F90300F79418 /* SemestersTableViewController.swift */; };
 		FAAA60621DD8F90300F79418 /* SemesterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605E1DD8F90300F79418 /* SemesterTableViewCell.swift */; };
 		FAAA60631DD8F90300F79418 /* SemesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA605F1DD8F90300F79418 /* SemesterViewController.swift */; };
-		FAAA606D1DD8F94200F79418 /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAA606A1DD8F93900F79418 /* MathParser.framework */; };
 		FAAA60711DD8FD8100F79418 /* SemestersSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60701DD8FD8100F79418 /* SemestersSplitViewController.swift */; };
 		FAAA60731DD91D4C00F79418 /* Init.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAA60721DD91D4C00F79418 /* Init.storyboard */; };
 		FAAA60781DD9228500F79418 /* StudyPlansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA60771DD9228500F79418 /* StudyPlansTableViewController.swift */; };
@@ -49,6 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F01CD871DE6D81C00470CAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 559B3EF81B74063600000108;
+			remoteInfo = MathParser;
+		};
 		FAAA60691DD8F93900F79418 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAAA60641DD8F93800F79418 /* DDMathParser.xcodeproj */;
@@ -64,6 +72,20 @@
 			remoteInfo = MathParserTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F01CD891DE6D81C00470CAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F01CD861DE6D81C00470CAE /* MathParser.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F79A78D1DDAA7CE00EF2E90 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAA606D1DD8F94200F79418 /* MathParser.framework in Frameworks */,
+				5F01CD851DE6D81C00470CAE /* MathParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,10 +345,12 @@
 				FAAA603F1DD8F89500F79418 /* Sources */,
 				FAAA60401DD8F89500F79418 /* Frameworks */,
 				FAAA60411DD8F89500F79418 /* Resources */,
+				5F01CD891DE6D81C00470CAE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5F01CD881DE6D81C00470CAE /* PBXTargetDependency */,
 			);
 			name = SanAcademics;
 			productName = SanAcademics;
@@ -345,6 +369,7 @@
 				TargetAttributes = {
 					FAAA60421DD8F89500F79418 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UPSPC39MW9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -447,6 +472,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F01CD881DE6D81C00470CAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MathParser;
+			targetProxy = 5F01CD871DE6D81C00470CAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAAA604A1DD8F89500F79418 /* Semesters.storyboard */ = {
@@ -566,7 +599,9 @@
 		FAAA60591DD8F89500F79418 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UPSPC39MW9;
 				INFOPLIST_FILE = SanAcademics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sanIdeas.SanAcademics;
@@ -578,7 +613,9 @@
 		FAAA605A1DD8F89500F79418 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UPSPC39MW9;
 				INFOPLIST_FILE = SanAcademics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sanIdeas.SanAcademics;
