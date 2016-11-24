@@ -14,6 +14,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var formula: UITextView!
     
+    var coursesTableViewController: CoursesTableViewController?
     var alert: UIAlertController?
     var confirmAssessmentTypeAction: UIAlertAction?
     var course: Course?
@@ -26,13 +27,13 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.delegate = self
         
-        formula.text = course!.formula
+        updateFormula(course!.formula)
         getAssessmentTypes()
     }
     
     override func viewDidLayoutSubviews() {
-        let height = min(self.view.bounds.size.height, self.tableView.contentSize.height)
-        tableViewHeightConstraint.constant = height
+        let height = min(self.view.bounds.size.height, self.tableView.contentSize.height, 267)
+        tableViewHeightConstraint.constant = max(height, 44)
         self.view.layoutIfNeeded()
     }
 
@@ -60,6 +61,19 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(assessmentTypes.count <= 0){
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            
+            emptyLabel.text = "No hay tipos de evaluaciones agregadas"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = .none
+        }
+        else{
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+        }
+        
         return assessmentTypes.count
     }
     
@@ -68,7 +82,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.identifier.text = assessmentTypes[indexPath.row].identifier
         cell.name.text = assessmentTypes[indexPath.row].name
-        cell.grade.text = "0"   // USE ASSESSMENT TYPE FORMULA TO CALCULATE GRADE
+        cell.grade.text = String(assessmentTypes[indexPath.row].average)
         return cell
     }
 
@@ -165,6 +179,13 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
             
             assessmentController.assessmentType = assessmentTypes[index]
             assessmentController.navigationItem.title = assessmentTypes[index].name
+            assessmentController.assessmentTypesViewController = self
+        }
+        else if(segue.identifier == "EditCourseFormulaSegue"){
+            let navigationController = segue.destination as! UINavigationController
+            let formulaController = navigationController.viewControllers[0] as! EditCourseFormulaViewController
+            
+            formulaController.course = course
         }
     }
     
@@ -188,6 +209,27 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         catch let error as NSError{
             print("Could not save \(error), \(error.localizedDescription)")
         }
+    }
+    
+    func updateFormula(_ newFormula: String?){
+        if(newFormula != nil){
+            formula.text = newFormula
+        }
+        else{
+            formula.text = "No hay una fórmula asignada"
+        }
+    }
+    
+    @IBAction func onCancelEditCourseFormula(segue: UIStoryboardSegue){
+    }
+    
+    @IBAction func onSaveEditCourseFormula(segue: UIStoryboardSegue){
+        let courseFormulaController = segue.source as! EditCourseFormulaViewController
+        let newFormula = courseFormulaController.formula.text
+        
+        updateFormula(newFormula)
+        course!.updateFormula(newFormula)
+        coursesTableViewController!.tableView.reloadRows(at: [IndexPath(row: coursesTableViewController!.courses.index(of: course!)!, section: 0)], with: .automatic)
     }
     
     /*

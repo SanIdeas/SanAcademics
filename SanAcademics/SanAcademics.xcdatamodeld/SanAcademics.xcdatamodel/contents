@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
-        <attribute name="grade" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="grade" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="assessmentType" maxCount="1" deletionRule="Nullify" destinationEntity="AssessmentType" inverseName="assessmentInverse" inverseEntity="AssessmentType" syncable="YES"/>
     </entity>
     <entity name="AssessmentType" representedClassName="AssessmentType" syncable="YES" codeGenerationType="class">
+        <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="formula" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -15,7 +16,7 @@
     </entity>
     <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
         <attribute name="abbreviation" attributeType="String" syncable="YES"/>
-        <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="average" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="credits" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="formula" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -48,7 +49,7 @@
     </entity>
     <elements>
         <element name="Assessment" positionX="162" positionY="407" width="128" height="103"/>
-        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="118"/>
+        <element name="AssessmentType" positionX="-144" positionY="401" width="128" height="133"/>
         <element name="Course" positionX="-137" positionY="155" width="128" height="163"/>
         <element name="Semester" positionX="169" positionY="95" width="128" height="118"/>
         <element name="Student" positionX="-198" positionY="-19" width="117" height="73"/>

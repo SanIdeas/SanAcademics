@@ -34,10 +34,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="467-6y-TPn">
-                                            <rect key="frame" x="337" y="0.0" width="38" height="43"/>
+                                            <rect key="frame" x="315" y="0.0" width="60" height="43"/>
                                             <color key="backgroundColor" red="0.89050673264849078" green="0.88929260906722984" blue="0.91050032383419688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="38" id="cju-i8-S1e"/>
+                                                <constraint firstAttribute="width" constant="60" id="cju-i8-S1e"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -156,10 +156,10 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAr-EM-ciU">
-                                                    <rect key="frame" x="303" y="0.0" width="38" height="44"/>
+                                                    <rect key="frame" x="281" y="0.0" width="60" height="44"/>
                                                     <color key="backgroundColor" red="0.89050673260000002" green="0.88929260909999996" blue="0.91050032380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="38" id="0V8-fj-2D1"/>
+                                                        <constraint firstAttribute="width" constant="60" id="0V8-fj-2D1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -200,10 +200,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udG-1Q-ULQ">
+                                <rect key="frame" x="120" y="366" width="24" height="24"/>
+                                <state key="normal" image="Edit"/>
+                                <connections>
+                                    <segue destination="LZ0-lV-oAN" kind="presentation" identifier="EditCourseFormulaSegue" id="BbF-0g-itW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="diu-aQ-HIC" firstAttribute="leading" secondItem="o0j-1t-eKC" secondAttribute="leadingMargin" constant="4" id="BoU-7j-weR"/>
+                            <constraint firstItem="udG-1Q-ULQ" firstAttribute="centerY" secondItem="diu-aQ-HIC" secondAttribute="centerY" id="GnB-KZ-w9p"/>
                             <constraint firstItem="eTU-I1-56g" firstAttribute="width" secondItem="o0j-1t-eKC" secondAttribute="width" id="JZk-qE-bFE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gIW-De-gXc" secondAttribute="leading" id="KTA-y6-cMd"/>
                             <constraint firstAttribute="bottom" secondItem="eTU-I1-56g" secondAttribute="bottom" constant="20" id="O66-4m-Zng"/>
@@ -214,6 +222,7 @@
                             <constraint firstItem="diu-aQ-HIC" firstAttribute="top" secondItem="T64-bH-8yU" secondAttribute="bottom" constant="32" id="hbk-Ef-qhx"/>
                             <constraint firstItem="T64-bH-8yU" firstAttribute="width" secondItem="o0j-1t-eKC" secondAttribute="width" id="jqp-6v-SgM"/>
                             <constraint firstItem="T64-bH-8yU" firstAttribute="centerX" secondItem="o0j-1t-eKC" secondAttribute="centerX" id="ksJ-3j-zAt"/>
+                            <constraint firstItem="udG-1Q-ULQ" firstAttribute="leading" secondItem="diu-aQ-HIC" secondAttribute="trailing" constant="8" id="uaH-2G-LGe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zgf-c3-eCZ">
@@ -233,6 +242,65 @@
                 <exit id="whS-CD-d3q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6012" y="418.74062968515744"/>
+        </scene>
+        <!--Editar Fórmula-->
+        <scene sceneID="9F8-v9-ua7">
+            <objects>
+                <viewController id="HCc-C3-ZoM" customClass="EditCourseFormulaViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OFw-oZ-x9C"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qhu-yR-Qz1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CFG-Pr-Bp0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese la fórmula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b71-H2-6S6">
+                                <rect key="frame" x="37" y="166" width="200" height="30"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zkh-XG-3ft">
+                                <rect key="frame" x="26" y="204" width="322" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Q7f-cn-sKH"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zkh-XG-3ft" firstAttribute="leading" secondItem="CFG-Pr-Bp0" secondAttribute="leadingMargin" constant="10" id="EPc-gl-ruf"/>
+                            <constraint firstItem="Zkh-XG-3ft" firstAttribute="top" secondItem="b71-H2-6S6" secondAttribute="bottom" constant="8" id="HiV-XV-Frt"/>
+                            <constraint firstItem="Zkh-XG-3ft" firstAttribute="centerX" secondItem="CFG-Pr-Bp0" secondAttribute="centerX" id="NT3-sb-3mY"/>
+                            <constraint firstItem="b71-H2-6S6" firstAttribute="leading" secondItem="CFG-Pr-Bp0" secondAttribute="leadingMargin" constant="21" id="h6u-kh-FV8"/>
+                            <constraint firstItem="b71-H2-6S6" firstAttribute="top" secondItem="OFw-oZ-x9C" secondAttribute="bottom" constant="102" id="n4J-tQ-8cV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Editar Fórmula" id="seu-jI-VGl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iBx-de-thl">
+                            <connections>
+                                <segue destination="tIh-Aj-YxY" kind="unwind" unwindAction="onCancelEditCourseFormulaWithSegue:" id="qPb-GY-p6s"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ako-hP-2VB">
+                            <connections>
+                                <segue destination="tIh-Aj-YxY" kind="unwind" unwindAction="onSaveEditCourseFormulaWithSegue:" id="C3S-Rs-tNI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="formula" destination="Zkh-XG-3ft" id="Lkh-ay-ki9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kQ-YM-bVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tIh-Aj-YxY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6012" y="2166.5667166416792"/>
         </scene>
         <!--Agregar Asignatura-->
         <scene sceneID="WrC-fG-AIs">
@@ -1118,10 +1186,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-3d-csz">
-                                                    <rect key="frame" x="337" y="0.0" width="38" height="44"/>
+                                                    <rect key="frame" x="315" y="0.0" width="60" height="44"/>
                                                     <color key="backgroundColor" red="0.89050673260000002" green="0.88929260909999996" blue="0.91050032380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="38" id="1zS-n1-M7n"/>
+                                                        <constraint firstAttribute="width" constant="60" id="1zS-n1-M7n"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1160,18 +1228,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uL0-oQ-A9Q">
+                                <rect key="frame" x="120" y="366" width="24" height="24"/>
+                                <state key="normal" image="Edit"/>
+                                <connections>
+                                    <segue destination="tke-dQ-F1O" kind="presentation" identifier="EditAssessmentTypeFormulaSegue" id="q9x-i7-ITc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="avn-8Y-Sxt" firstAttribute="centerX" secondItem="9Cb-gr-u2b" secondAttribute="centerX" id="1T0-LS-yJa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aq2-Ti-wBR" secondAttribute="trailing" constant="43" id="AgN-0k-ddA"/>
                             <constraint firstItem="SxS-NV-zy6" firstAttribute="leading" secondItem="9Cb-gr-u2b" secondAttribute="leadingMargin" constant="4" id="IVf-EZ-pV4"/>
+                            <constraint firstItem="uL0-oQ-A9Q" firstAttribute="leading" secondItem="SxS-NV-zy6" secondAttribute="trailing" constant="8" id="RXH-Bc-nsE"/>
                             <constraint firstItem="Aq2-Ti-wBR" firstAttribute="top" secondItem="SxS-NV-zy6" secondAttribute="bottom" constant="-4" id="X2t-xp-YhC"/>
                             <constraint firstAttribute="bottom" secondItem="eNG-Mt-1Lh" secondAttribute="bottom" constant="20" id="ckK-31-MBG"/>
                             <constraint firstItem="SxS-NV-zy6" firstAttribute="top" secondItem="avn-8Y-Sxt" secondAttribute="bottom" constant="32" id="cvy-8B-zsQ"/>
                             <constraint firstItem="eNG-Mt-1Lh" firstAttribute="centerX" secondItem="9Cb-gr-u2b" secondAttribute="centerX" id="eCG-TV-tsN"/>
                             <constraint firstItem="avn-8Y-Sxt" firstAttribute="top" secondItem="iF3-Ey-nmz" secondAttribute="bottom" id="hSX-HG-eIY"/>
                             <constraint firstItem="eNG-Mt-1Lh" firstAttribute="width" secondItem="9Cb-gr-u2b" secondAttribute="width" id="lgv-sU-ied"/>
+                            <constraint firstItem="uL0-oQ-A9Q" firstAttribute="centerY" secondItem="SxS-NV-zy6" secondAttribute="centerY" id="sFd-jj-MFR"/>
                             <constraint firstItem="avn-8Y-Sxt" firstAttribute="width" secondItem="9Cb-gr-u2b" secondAttribute="width" id="stW-wo-TI3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Aq2-Ti-wBR" secondAttribute="leading" id="swZ-iu-UIA"/>
                         </constraints>
@@ -1194,11 +1271,107 @@
             </objects>
             <point key="canvasLocation" x="7106" y="419"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pux-iw-fB5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LZ0-lV-oAN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VVK-aL-LWf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HCc-C3-ZoM" kind="relationship" relationship="rootViewController" id="x8Z-B3-AGp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZf-rI-aif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6012" y="1293"/>
+        </scene>
+        <!--Editar Fórmula-->
+        <scene sceneID="lBx-pp-sdZ">
+            <objects>
+                <viewController id="TXE-rW-CLp" customClass="EditAssessmentTypeFormulaViewController" customModule="SanAcademics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EBJ-1b-j45"/>
+                        <viewControllerLayoutGuide type="bottom" id="pJ6-Q3-Z6s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="db6-gc-rG9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese la fórmula" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-EO-FCG">
+                                <rect key="frame" x="37" y="166" width="200" height="30"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A79-e6-dm6">
+                                <rect key="frame" x="26" y="204" width="322" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Txt-HJ-msQ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kIZ-EO-FCG" firstAttribute="leading" secondItem="db6-gc-rG9" secondAttribute="leadingMargin" constant="21" id="0Cc-jt-M5Z"/>
+                            <constraint firstItem="A79-e6-dm6" firstAttribute="top" secondItem="kIZ-EO-FCG" secondAttribute="bottom" constant="8" id="0WR-eg-BGP"/>
+                            <constraint firstItem="A79-e6-dm6" firstAttribute="centerX" secondItem="db6-gc-rG9" secondAttribute="centerX" id="j19-nk-GHG"/>
+                            <constraint firstItem="kIZ-EO-FCG" firstAttribute="top" secondItem="EBJ-1b-j45" secondAttribute="bottom" constant="102" id="j5u-L1-nRG"/>
+                            <constraint firstItem="A79-e6-dm6" firstAttribute="leading" secondItem="db6-gc-rG9" secondAttribute="leadingMargin" constant="10" id="sKY-gG-Mue"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Editar Fórmula" id="zaJ-2g-Fb7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vzB-Xn-Fz4">
+                            <connections>
+                                <segue destination="Ysp-ZG-pJn" kind="unwind" unwindAction="onCancelEditAssessmentTypeFormulaWithSegue:" id="jRs-wk-3C3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3LF-7J-Ntx">
+                            <connections>
+                                <segue destination="Ysp-ZG-pJn" kind="unwind" unwindAction="onSaveEditAssessmentTypeFormulaWithSegue:" id="Blz-Up-Cur"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="formula" destination="A79-e6-dm6" id="lfp-5h-ZwR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="InC-sh-oju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ysp-ZG-pJn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7105" y="2167"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z06-Gz-rDY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tke-dQ-F1O" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QKd-LT-fcd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TXE-rW-CLp" kind="relationship" relationship="rootViewController" id="yrb-wd-gY2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7D-4d-eJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7105" y="1292"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Arrow" width="24" height="24"/>
         <image name="Books" width="24" height="24"/>
         <image name="Clock" width="24" height="24"/>
+        <image name="Edit" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="anf-cE-RCn"/>

@@ -41,7 +41,19 @@ class CoursesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if(courses.count <= 0){
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            
+            emptyLabel.text = "No hay asignaturas agregadas"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = .none
+        }
+        else{
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+        }
+        
         return courses.count
     }
 
@@ -51,7 +63,7 @@ class CoursesTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.course.text = courses[indexPath.row].name
-        cell.average.text = String(describing: courses[indexPath.row].average!)
+        cell.average.text = String(courses[indexPath.row].average)
 
         return cell
     }
@@ -69,6 +81,7 @@ class CoursesTableViewController: UITableViewController {
             
             courseDetailController.course = courses[index]
             courseDetailController.navigationItem.title = courses[index].name
+            courseDetailController.coursesTableViewController = self
         }
     }
     

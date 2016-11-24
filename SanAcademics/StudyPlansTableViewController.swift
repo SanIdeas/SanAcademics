@@ -37,7 +37,19 @@ class StudyPlansTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if(studyPlans.count <= 0){
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            
+            emptyLabel.text = "No hay planes de estudio agregados"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = .none
+        }
+        else{
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+        }
+        
         return studyPlans.count
     }
 

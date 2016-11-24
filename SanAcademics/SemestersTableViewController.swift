@@ -54,7 +54,19 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if(self.semesters.count <= 0){
+            let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+            
+            emptyLabel.text = "No hay semestres agregados"
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = .none
+        }
+        else{
+            self.tableView.backgroundView = nil
+            self.tableView.separatorStyle = .singleLine
+        }
+        
         return self.semesters.count
     }
 
@@ -64,7 +76,7 @@ class SemestersTableViewController: UITableViewController, UITextFieldDelegate{
         // Configure the cell...
         let semester = semesters[indexPath.row]
         cell.semester.text = "\(semester.number) - \(semester.year)"
-        cell.subtitle.text = "PA: \(studyPlan!.academicPriority!)"
+        cell.subtitle.text = "FAE: \(semester.fae!)"
         return cell
     }
     
